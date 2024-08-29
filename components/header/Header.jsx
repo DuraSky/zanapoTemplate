@@ -15,8 +15,8 @@ export const Header = () => {
   const { currentTranslations } = useContext(LanguageContext);
 
   return (
-    <header className={`${styles.headerStyle}`}>
-      <div className="container-fluid">
+    <header className={`${styles.headerStyle} container-fluid`}>
+      <div className="">
         <TopBar />
         <div className="row">
           <div className="col-3 col-md-6 col-lg-3 order-2 order-md-1 d-none d-md-flex">

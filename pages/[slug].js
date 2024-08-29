@@ -4,6 +4,8 @@ import { CategoryLayout } from "../components/CategoryLayout";
 import { TopSection } from "../components/category[slug]/TopSection";
 import { ProductListing } from "../components/category[slug]/ProductListing";
 
+import styles from "/styles/slug.module.scss";
+
 const CategoryPage = ({ data }) => {
   const { setTopMenu } = useContext(DataContext);
   const [showLongDescription, setShowLongDescription] = useState(false);
@@ -73,15 +75,12 @@ const CategoryPage = ({ data }) => {
 
     try {
       const response = await fetch(
-        // `https://api.test.zanapo.cz/api/v1/url/content?requested_path=${selectedFilterUrl}&elements=categoryfaq`
-        `http://pavel-fedora.tailcfce08.ts.net:8000/api/v1/url/content?requested_path=${selectedFilterUrl}&elements=categoryfaq`
+        `https://api.test.zanapo.cz/api/v1/url/content?requested_path=${selectedFilterUrl}&elements=categoryfaq`
       );
       const data = await response.json();
 
-      // Assuming the API returns the updated product list based on the filters
       setFilteredProducts(data.products);
 
-      // Also update the filters if they need to reflect new counts or selections
       if (data.filters) {
         setFilterCategories(data.filters);
       }
@@ -104,7 +103,7 @@ const CategoryPage = ({ data }) => {
       <ProductListing
         filterCategories={filterCategories}
         filteredProducts={filteredProducts}
-        handleCheckboxChange={handleCheckboxChange} // Pass the function to handle checkbox changes
+        handleCheckboxChange={handleCheckboxChange}
       />
     </>
   );
@@ -114,8 +113,8 @@ export async function getServerSideProps({ params }) {
   const { slug } = params;
 
   const res = await fetch(
-    // `https://api.test.zanapo.cz/api/v1/url/content?requested_path=/${slug}&elements=categoryfaq`,
-    `http://pavel-fedora.tailcfce08.ts.net:8000/api/v1/url/content?requested_path=/${slug}&elements=categoryfaq`,
+    `https://api.test.zanapo.cz/api/v1/url/content?requested_path=/${slug}&elements=categoryfaq`,
+    // `http://pavel-fedora.tailcfce08.ts.net:8000/api/v1/url/content?requested_path=/${slug}&elements=categoryfaq`,
     {
       method: "GET",
       headers: {

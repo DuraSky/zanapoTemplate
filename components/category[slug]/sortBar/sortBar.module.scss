@@ -1,0 +1,14 @@
+@import "./styles/variables";
+
+.sortBar {
+  background-color: $grey-color;
+  padding: 10px 0;
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+}

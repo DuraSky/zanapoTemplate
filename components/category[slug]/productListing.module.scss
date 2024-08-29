@@ -1,0 +1,9 @@
+@import "./styles/variables";
+
+#filterAndProducts {
+  display: flex;
+
+  .mobileButton {
+    background-color: $grey-color;
+  }
+}

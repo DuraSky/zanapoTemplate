@@ -65,7 +65,7 @@ export const IconMenu = () => {
       <div
         className={`col-2 d-lg-none order-5 order-md-5 ${styles.icon} `}
         id={styles.mobileMenu}
-        onClick={toggleMenu} // Toggle menu on click
+        onClick={toggleMenu}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,6 @@ export const IconMenu = () => {
           <path d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" />
         </svg>
       </div>
-      {/* Render TopMenuMobile conditionally */}
       {isMenuOpen && <TopMenuMobile onClose={handleCloseMenu} />}
     </div>
   );
