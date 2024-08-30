@@ -17,6 +17,7 @@ export const TopSection = ({
   breadcrumbsLinks,
 }) => {
   return (
+    // <div className={styles.wrapper}>
     <section className={`${styles.contentWrapperHead} container-fluid`}>
       {/* <div className="container-fluid"> */}
       <div className="row">
@@ -24,7 +25,6 @@ export const TopSection = ({
           <BreadCrumbsNav breadcrumbsLinks={breadcrumbsLinks} />
         </div>
       </div>
-
       <div className="row">
         <div className="col-lg-7 align-self-start">
           <CategoryText
@@ -32,19 +32,17 @@ export const TopSection = ({
             showLongDescription={showLongDescription}
             toggleDescription={toggleDescription}
           />
-
           <div className="d-none d-md-flex">
             <CategoryElements apiElements={apiElements} />
           </div>
         </div>
-
         {bestProducts.length > 0 && <TopSellers bestProducts={bestProducts} />}
       </div>
-
       <div className="row">
         <CategorySubMenu category={category} />
       </div>
       {/* </div> */}
     </section>
+    // </div>
   );
 };

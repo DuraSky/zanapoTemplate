@@ -38,17 +38,17 @@ export const ProductListing = ({
             />
           </div>
         ) : (
-          <div className={`col-3`}>
+          <div className={`col-2`}>
             <FilterComponent
               filterCategories={filterCategories}
               handleCheckboxChange={handleCheckboxChange}
             />
           </div>
         )}
-        <div className="col-12 col-md-9">
-          <div className="row">
-            <SortBar />
-          </div>
+        <div className="col-12 col-md-10">
+          {/* <div className="row"> */}
+          <SortBar />
+          {/* </div> */}
           <Product filteredProducts={filteredProducts} />
         </div>
       </div>

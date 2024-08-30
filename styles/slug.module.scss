@@ -1,7 +1,11 @@
 @import "./styles/variables";
 
 .contentWrapperHead {
+  //padding: 10px 0;
   background-color: $grey-color;
   box-shadow: $myInsetBoxShadow;
-  //padding: 10px 0;
 }
+
+// .wrapper {
+//   width: 100%;
+// }
